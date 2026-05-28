@@ -26,12 +26,56 @@ export const metadata: Metadata = {
   keywords: ["autoškola", "Trhové Sviny", "řidičský průkaz", "výcvik", "motocykl", "kategorie B"],
 }
 
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "EducationalOrganization"],
+  name: "Autoškola Lukáš Kápar",
+  description:
+    "Autoškola v Trhových Svinech — výcvik kategorií AM, A1, A2, A, B, B+E, C, C+E, T. Srozumitelná výuka, transparentní ceny, individuální přístup.",
+  slogan: "Bezpečně s námi",
+  telephone: "+420721574907",
+  email: "info@autoskolakapar.cz",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Husova 548",
+    addressLocality: "Trhové Sviny",
+    postalCode: "37401",
+    addressCountry: "CZ",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 48.8394,
+    longitude: 14.6338,
+  },
+  areaServed: {
+    "@type": "City",
+    name: "Trhové Sviny",
+  },
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Kurzy řidičského průkazu",
+    itemListElement: ["AM", "A1", "A2", "A", "B", "B+E", "C", "C+E", "T"].map((cat) => ({
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Course",
+        name: `Řidičský průkaz skupiny ${cat}`,
+      },
+    })),
+  },
+}
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="cs"
       className={`${barlow.variable} ${dmSans.variable}`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+      </head>
       <body className="bg-graphite text-cream min-h-screen flex flex-col">
         <Navbar />
         <main className="flex-1">{children}</main>

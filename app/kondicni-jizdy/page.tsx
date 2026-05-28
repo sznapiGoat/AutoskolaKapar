@@ -2,33 +2,30 @@ import type { Metadata } from "next"
 import { conditioning, site } from "@/lib/data"
 import { FadeIn, FadeInStagger } from "@/components/FadeIn"
 import { PageHeader } from "@/components/PageHeader"
+import { ContactForm } from "@/components/ContactForm"
 
 export const metadata: Metadata = {
   title: "Kondiční jízdy",
-  description: "Zdokonalte své řidičské dovednosti s kondičními jízdami pro kategorie A2, A, B a B+E.",
+  description: "Kondiční jízdy skupin A2, A, B a B+E — oživení a zdokonalení řidičských dovedností s instruktorem.",
 }
 
 function fmt(n: number) {
   return n.toLocaleString("cs-CZ") + " Kč"
 }
 
-function PriceTable({ title, rows }: { title: string; rows: { label: string; price: number }[] }) {
+type PriceItem = { label: string; duration: string; price: number }
+
+function PriceCard({ item }: { item: PriceItem }) {
   return (
-    <FadeIn>
-      <div className="bg-surface border border-border p-8">
-        <h3 className="font-display font-bold text-cream text-xl uppercase tracking-wide mb-6">
-          {title}
-        </h3>
-        <div className="space-y-0">
-          {rows.map((r) => (
-            <div key={r.label} className="flex items-center justify-between py-4 border-b border-border last:border-0">
-              <span className="text-muted text-sm">{r.label}</span>
-              <span className="font-display font-bold text-cream">{fmt(r.price)}</span>
-            </div>
-          ))}
-        </div>
+    <div className="bg-graphite border border-border p-6 flex flex-col gap-4 hover:border-red/30 transition-colors duration-300">
+      <p className="font-display font-bold text-cream text-base uppercase tracking-wide leading-tight">
+        {item.label}
+      </p>
+      <div className="flex items-end justify-between mt-auto pt-4 border-t border-border">
+        <span className="text-muted text-sm">{item.duration}</span>
+        <span className="font-display font-black text-red text-2xl">{fmt(item.price)}</span>
       </div>
-    </FadeIn>
+    </div>
   )
 }
 
@@ -37,67 +34,106 @@ export default function KondicniJizdyPage() {
     <>
       <PageHeader
         label="Kondiční jízdy"
-        title="Zdokonalte své řidičské dovednosti"
-        desc={conditioning.intro}
+        title={conditioning.intro}
+        desc={conditioning.desc}
       />
 
-      <section className="py-20 bg-graphite">
+      {/* B+E note */}
+      <section className="py-8 bg-surface border-b border-border">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <PriceTable title="Motocykly (A2 / A)" rows={conditioning.motorcycle} />
-            <PriceTable title="Automobil (B)" rows={conditioning.carB} />
-            <PriceTable title="Automobil s přívěsem (B+E)" rows={conditioning.carBE} />
-          </div>
+          <FadeIn>
+            <div className="flex items-start gap-4 max-w-3xl">
+              <div className="w-1 h-full bg-red shrink-0 self-stretch min-h-[48px]" />
+              <p className="text-muted text-sm leading-relaxed">{conditioning.beDesc}</p>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
-      <section className="py-16 bg-surface border-t border-border">
+      {/* Pricing */}
+      <section className="py-20 bg-graphite">
+        <div className="max-w-7xl mx-auto px-6 space-y-14">
+          <FadeIn>
+            <div>
+              <h2 className="font-display font-bold text-cream text-3xl uppercase tracking-wide mb-1">
+                Motocykly A2 · A
+              </h2>
+              <div className="w-10 h-0.5 bg-red mb-8" />
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {conditioning.motorcycle.map((item) => (
+                  <PriceCard key={item.label + item.duration} item={item} />
+                ))}
+              </div>
+            </div>
+          </FadeIn>
+
+          <FadeIn>
+            <div>
+              <h2 className="font-display font-bold text-cream text-3xl uppercase tracking-wide mb-1">
+                Automobil B
+              </h2>
+              <div className="w-10 h-0.5 bg-red mb-8" />
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {conditioning.carB.map((item) => (
+                  <PriceCard key={item.label + item.duration} item={item} />
+                ))}
+              </div>
+            </div>
+          </FadeIn>
+
+          <FadeIn>
+            <div>
+              <h2 className="font-display font-bold text-cream text-3xl uppercase tracking-wide mb-1">
+                Automobil s přívěsem B+E
+              </h2>
+              <div className="w-10 h-0.5 bg-red mb-8" />
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {conditioning.carBE.map((item) => (
+                  <PriceCard key={item.label + item.duration} item={item} />
+                ))}
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Note + form */}
+      <section className="py-20 bg-surface border-t border-border">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <FadeIn>
-              <div className="bg-surface-2 border border-border p-8">
-                <h3 className="font-display font-bold text-cream text-xl uppercase tracking-wide mb-4">
-                  Co kondiční jízdy zahrnují
-                </h3>
-                <ul className="space-y-3">
-                  {[
-                    "Parkování a couvání",
-                    "Jízda na dálnici",
-                    "Provoz ve městě (České Budějovice, Praha)",
-                    "Jízda s automatickou převodovkou",
-                    "Nácvik problematických manévrů",
-                  ].map((item) => (
-                    <li key={item} className="flex items-start gap-3">
-                      <span className="w-1.5 h-1.5 bg-red rounded-full mt-2 shrink-0" />
-                      <span className="text-muted text-sm">{item}</span>
-                    </li>
-                  ))}
-                </ul>
+              <div className="space-y-6">
+                <div className="bg-graphite border border-border p-8">
+                  <h3 className="font-display font-bold text-cream text-xl uppercase tracking-wide mb-3">
+                    Před kondiční jízdou
+                  </h3>
+                  <p className="text-muted text-sm leading-relaxed">{conditioning.note}</p>
+                </div>
+                <div className="bg-graphite border border-border p-8">
+                  <h3 className="font-display font-bold text-cream text-xl uppercase tracking-wide mb-4">
+                    Přímý kontakt
+                  </h3>
+                  <div className="space-y-2">
+                    <a
+                      href={`tel:${site.phoneRaw}`}
+                      className="block font-display font-bold text-cream text-xl hover:text-red transition-colors"
+                    >
+                      {site.phone}
+                    </a>
+                    <a
+                      href={`mailto:${site.email}`}
+                      className="block text-muted hover:text-cream transition-colors"
+                    >
+                      {site.email}
+                    </a>
+                  </div>
+                </div>
               </div>
             </FadeIn>
 
-            <FadeIn delay={0.1}>
-              <div className="bg-surface-2 border border-border p-8">
-                <h3 className="font-display font-bold text-cream text-xl uppercase tracking-wide mb-4">
-                  Jak se přihlásit
-                </h3>
-                <p className="text-muted text-sm leading-relaxed mb-6">
-                  {conditioning.note}
-                </p>
-                <div className="space-y-3">
-                  <a
-                    href={`tel:${site.phoneRaw}`}
-                    className="flex items-center gap-3 font-display font-bold text-cream hover:text-red transition-colors"
-                  >
-                    {site.phone}
-                  </a>
-                  <a
-                    href={`mailto:${site.email}`}
-                    className="flex items-center gap-3 font-display font-bold text-cream hover:text-red transition-colors"
-                  >
-                    {site.email}
-                  </a>
-                </div>
+            <FadeIn delay={0.15}>
+              <div className="bg-graphite border border-border p-8">
+                <ContactForm title="Kontaktujte nás" />
               </div>
             </FadeIn>
           </div>

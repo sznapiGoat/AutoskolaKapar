@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X } from "lucide-react"
+import { Menu, X, UserPlus } from "lucide-react"
 import { navLinks, site } from "@/lib/data"
 
 export function Navbar() {
@@ -59,13 +59,20 @@ export function Navbar() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             <a
               href={`tel:${site.phoneRaw}`}
-              className="hidden sm:block text-sm font-medium text-muted hover:text-cream transition-colors duration-200"
+              className="hidden xl:block text-sm font-medium text-muted hover:text-cream transition-colors duration-200"
             >
               {site.phone}
             </a>
+            <Link
+              href="/online-prihlaska"
+              className="hidden sm:inline-flex items-center gap-1.5 bg-red hover:bg-red-dark text-white font-display font-bold text-xs tracking-widest uppercase px-4 py-2 transition-colors duration-200"
+            >
+              <UserPlus size={13} />
+              Přihlásit se
+            </Link>
             <button
               onClick={() => setOpen(!open)}
               className="lg:hidden w-9 h-9 flex items-center justify-center text-cream hover:text-red transition-colors"

@@ -209,25 +209,30 @@ export const pricing = {
 }
 
 export const conditioning = {
-  intro:
-    "Zdokonalte své řidičské dovednosti s individuálními kondičními jízdami. Vhodné pro parkování, jízdu na dálnici, provoz ve městě (České Budějovice, Praha) nebo jízdu s automatickou převodovkou.",
+  intro: "Nabízíme kondiční jízdy skupin A2, A, B a B+E.",
+  desc: "Na přání zákazníka nabízíme oživení nebo vylepšení řidičských dovedností např. parkování, cesta do zaměstnání, jízda s automatickou převodovkou, v hustém provozu, s přívěsem, za snížené viditelnosti, na dálnici, ve větším městě (České Budějovice, Praha).",
+  beDesc: "U skupiny B+E nabízíme nácvik couvání a jízdu s nákladním vozidlem do 3 500 kg a případně s přípojným vozidlem s celkovou hmotností nad 750 kg.",
+  note: "Před kondiční jízdou je nutné znát totožnost zákazníka a vlastněné skupiny ŘO.",
   motorcycle: [
-    { label: "60 min na cvičném polygonu", price: 1000 },
-    { label: "60 min v provozu", price: 800 },
-    { label: "60 min na vlastní motorce", price: 600 },
+    { label: "Kondiční jízda A2–A (cvičiště)", duration: "60 min", price: 1000 },
+    { label: "Kondiční jízda A2–A (provoz)", duration: "60 min", price: 800 },
+    { label: "Kondiční jízda A2–A (vlastní motocykl)", duration: "60 min", price: 600 },
   ],
   carB: [
-    { label: "1 lekce (60 min)", price: 1200 },
-    { label: "5 lekcí (5 hodin)", price: 5200 },
-    { label: "10 lekcí (10 hodin)", price: 9500 },
+    { label: "Kondiční jízda B", duration: "60 min", price: 1200 },
+    { label: "Kondiční jízda B", duration: "5 × 60 min", price: 5200 },
+    { label: "Kondiční jízda B", duration: "10 × 60 min", price: 9500 },
   ],
   carBE: [
-    { label: "1 lekce (60 min)", price: 1300 },
-    { label: "5 lekcí", price: 5500 },
-    { label: "10 lekcí", price: 10500 },
+    { label: "Kondiční jízda B+E", duration: "60 min", price: 1300 },
+    { label: "Kondiční jízda B+E", duration: "5 × 60 min", price: 5500 },
+    { label: "Kondiční jízda B+E", duration: "10 × 60 min", price: 10500 },
   ],
-  note: "Před objednáním je nutné předložit doklad totožnosti a průkaz o držených kategoriích.",
 }
+
+export const courseDates = [
+  { year: 2026, month: 5, day: 2, label: "Červen 2026" },
+]
 
 export const l17 = {
   intro:
@@ -269,6 +274,7 @@ export const navLinks = [
   { label: "Termíny", href: "/terminy" },
   { label: "Kondiční jízdy", href: "/kondicni-jizdy" },
   { label: "L17", href: "/l17" },
+  { label: "Služby", href: "/sluzby" },
   { label: "Studijní materiály", href: "/studijni-materialy" },
   { label: "Kontakt", href: "/kontakt" },
 ]
