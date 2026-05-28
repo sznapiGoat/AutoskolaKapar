@@ -44,19 +44,23 @@ export function Navbar() {
           </Link>
 
           <nav className="hidden lg:flex items-center gap-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`px-3 py-1.5 text-sm font-medium tracking-wide transition-colors duration-200 ${
-                  pathname === link.href
-                    ? "text-red"
-                    : "text-muted hover:text-cream"
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const active =
+                link.href === "/"
+                  ? pathname === "/"
+                  : pathname === link.href || pathname.startsWith(link.href + "/")
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`px-3 py-1.5 text-sm font-medium tracking-wide transition-colors duration-200 ${
+                    active ? "text-red" : "text-muted hover:text-cream"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              )
+            })}
           </nav>
 
           <div className="flex items-center gap-3">
@@ -104,7 +108,9 @@ export function Navbar() {
                   <Link
                     href={link.href}
                     className={`block py-3 font-display font-bold text-3xl tracking-wide uppercase transition-colors ${
-                      pathname === link.href ? "text-red" : "text-cream hover:text-red"
+                      (link.href === "/" ? pathname === "/" : pathname === link.href || pathname.startsWith(link.href + "/"))
+                        ? "text-red"
+                        : "text-cream hover:text-red"
                     }`}
                   >
                     {link.label}

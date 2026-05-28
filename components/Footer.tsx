@@ -63,8 +63,11 @@ export function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-dark-border flex flex-col sm:flex-row justify-between gap-4 text-xs text-dark-muted">
-          <p>© {new Date().getFullYear()} Autoškola Lukáš Kápar. Plátce DPH: ne.</p>
-          <p>Číslo účtu: {site.bankAccount}</p>
+          <p>© {new Date().getFullYear()} Autoškola Lukáš Kápar. Plátce DPH: ne. · Číslo účtu: {site.bankAccount}</p>
+          <div className="flex items-center gap-4">
+            <Link href="/podminky" className="hover:text-dark-text transition-colors">Podmínky</Link>
+            <Link href="/ochrana-osobnich-udaju" className="hover:text-dark-text transition-colors">Ochrana osobních údajů</Link>
+          </div>
         </div>
       </div>
     </footer>

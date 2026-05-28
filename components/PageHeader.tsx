@@ -1,14 +1,19 @@
+import Link from "next/link"
 import { FadeIn } from "@/components/FadeIn"
+import { ChevronRight } from "lucide-react"
+
+interface Crumb { label: string; href: string }
 
 interface PageHeaderProps {
   label: string
   title: string
   desc?: string
+  breadcrumb?: Crumb
 }
 
-export function PageHeader({ label, title, desc }: PageHeaderProps) {
+export function PageHeader({ label, title, desc, breadcrumb }: PageHeaderProps) {
   return (
-    <section className="pt-32 pb-16 bg-graphite border-b border-border relative overflow-hidden">
+    <section className="pt-28 pb-14 bg-graphite border-b border-border relative overflow-hidden">
       <div
         className="absolute inset-0 opacity-[0.05]"
         style={{
@@ -19,10 +24,22 @@ export function PageHeader({ label, title, desc }: PageHeaderProps) {
       />
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <FadeIn>
-          <p className="text-red font-display font-bold text-sm tracking-widest uppercase mb-4">
-            {label}
+          {breadcrumb && (
+            <div className="flex items-center gap-1.5 text-xs text-muted mb-4 font-display font-bold tracking-wide uppercase">
+              <Link href={breadcrumb.href} className="hover:text-cream transition-colors">
+                {breadcrumb.label}
+              </Link>
+              <ChevronRight size={12} />
+              <span className="text-cream">{label}</span>
+            </div>
+          )}
+          <p className="text-red font-display font-bold text-sm tracking-widest uppercase mb-3">
+            {breadcrumb ? breadcrumb.label : label}
           </p>
-          <h1 className="font-display font-black text-cream uppercase leading-tight mb-6" style={{ fontSize: "clamp(40px, 6vw, 80px)" }}>
+          <h1
+            className="font-display font-black text-cream uppercase leading-tight mb-5"
+            style={{ fontSize: "clamp(36px, 5.5vw, 72px)" }}
+          >
             {title}
           </h1>
           {desc && (

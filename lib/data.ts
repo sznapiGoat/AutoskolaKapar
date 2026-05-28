@@ -272,8 +272,6 @@ export const navLinks = [
   { label: "Kurzy", href: "/kurzy" },
   { label: "Ceník", href: "/cenik" },
   { label: "Termíny", href: "/terminy" },
-  { label: "Kondiční jízdy", href: "/kondicni-jizdy" },
-  { label: "L17", href: "/l17" },
   { label: "Služby", href: "/sluzby" },
   { label: "Studijní materiály", href: "/studijni-materialy" },
   { label: "Kontakt", href: "/kontakt" },

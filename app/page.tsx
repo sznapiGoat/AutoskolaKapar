@@ -5,6 +5,7 @@ import { categories, usps, site, stats } from "@/lib/data"
 import { FadeIn, FadeInStagger } from "@/components/FadeIn"
 import { Counter } from "@/components/Counter"
 import { HeroSection } from "@/components/HeroSection"
+import { TestimonialsSection } from "@/components/TestimonialsSection"
 
 export const metadata: Metadata = {
   title: "Autoškola Lukáš Kápar | Bezpečně s námi",
@@ -13,11 +14,11 @@ export const metadata: Metadata = {
 }
 
 const services = [
-  { label: "Ceník kurzů", href: "/cenik", desc: "Flexi, Standard, Premium a zvýhodněné balíčky" },
-  { label: "Termíny zahájení", href: "/terminy", desc: "Nejbližší kurz: " + site.nextCourse },
-  { label: "Kondiční jízdy", href: "/kondicni-jizdy", desc: "Zdokonalte své dovednosti s instruktorem" },
-  { label: "Program L17", href: "/l17", desc: "Řízení od 17 let pod dohledem mentora" },
-  { label: "Studijní materiály", href: "/studijni-materialy", desc: "Učebnice, testy online a mobilní aplikace" },
+  { label: "Kurzy", href: "/kurzy", desc: "B, motocykly, B+E, C, T — vyberte si kategorii" },
+  { label: "Ceník", href: "/cenik", desc: "Flexi, Standard, Premium a zvýhodněné balíčky" },
+  { label: "Termíny", href: "/terminy", desc: "Nejbližší kurz: " + site.nextCourse },
+  { label: "Služby", href: "/sluzby", desc: "Kondiční jízdy, L17, vrácení řidičáku" },
+  { label: "Studijní materiály", href: "/studijni-materialy", desc: "Učebnice, testy online a aplikace MOJE AUTOŠKOLA" },
   { label: "Kontakt", href: "/kontakt", desc: site.address },
 ]
 
@@ -140,6 +141,32 @@ export default function HomePage() {
           </FadeInStagger>
         </div>
       </section>
+
+      {/* Instructor */}
+      <section className="py-20 bg-surface border-t border-border">
+        <div className="max-w-7xl mx-auto px-6">
+          <FadeIn>
+            <div className="flex flex-col sm:flex-row items-start gap-10">
+              {/* Photo placeholder */}
+              <div className="w-40 h-40 bg-surface-2 border border-border flex items-center justify-center shrink-0">
+                {/* TODO: Replace with real photo of Lukáš Kápar */}
+                <span className="font-display font-black text-muted text-5xl">LK</span>
+              </div>
+              <div>
+                <p className="text-red font-display font-bold text-sm tracking-widest uppercase mb-3">Instruktor</p>
+                <h2 className="font-display font-black text-cream text-4xl uppercase mb-4">Lukáš Kápar</h2>
+                <p className="text-muted text-lg leading-relaxed max-w-xl">
+                  Autoškolu provozuje Lukáš Kápar v Trhových Svinech již více než 10 let.
+                  Za tu dobu prošlo výcvikem téměř 1 000 žáků. Srozumitelná výuka, klidné vedení
+                  a individuální přístup ke každému žákovi jsou základem jeho přístupu.
+                </p>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      <TestimonialsSection />
 
       {/* Services grid */}
       <section className="py-24 bg-surface">
