@@ -10,10 +10,10 @@ export function PageHeader({ label, title, desc }: PageHeaderProps) {
   return (
     <section className="pt-32 pb-16 bg-graphite border-b border-border relative overflow-hidden">
       <div
-        className="absolute inset-0 opacity-[0.03]"
+        className="absolute inset-0 opacity-[0.05]"
         style={{
           backgroundImage:
-            "linear-gradient(#f2ede6 1px, transparent 1px), linear-gradient(90deg, #f2ede6 1px, transparent 1px)",
+            "linear-gradient(#111116 1px, transparent 1px), linear-gradient(90deg, #111116 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }}
       />

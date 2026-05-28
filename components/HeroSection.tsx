@@ -11,10 +11,10 @@ export function HeroSection() {
     <section className="relative min-h-screen flex flex-col justify-end bg-graphite overflow-hidden">
       {/* Grid background */}
       <div
-        className="absolute inset-0 opacity-[0.04]"
+        className="absolute inset-0 opacity-[0.06]"
         style={{
           backgroundImage:
-            "linear-gradient(#f2ede6 1px, transparent 1px), linear-gradient(90deg, #f2ede6 1px, transparent 1px)",
+            "linear-gradient(#111116 1px, transparent 1px), linear-gradient(90deg, #111116 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }}
       />
@@ -90,7 +90,7 @@ export function HeroSection() {
               </Link>
               <Link
                 href="/kontakt"
-                className="inline-flex items-center gap-2.5 border border-border hover:border-cream/30 text-cream font-display font-bold text-sm tracking-widest uppercase px-8 py-4 transition-all duration-200"
+                className="inline-flex items-center gap-2.5 border border-[rgba(0,0,0,0.2)] hover:border-[rgba(0,0,0,0.4)] text-cream font-display font-bold text-sm tracking-widest uppercase px-8 py-4 transition-all duration-200"
               >
                 Kontakt
               </Link>

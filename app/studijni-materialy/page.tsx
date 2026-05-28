@@ -41,20 +41,55 @@ export default function StudijniMaterialyPage() {
         </div>
       </section>
 
-      <section className="py-16 bg-surface border-t border-border">
+      <section className="py-20 bg-surface border-t border-border">
         <div className="max-w-7xl mx-auto px-6">
-          <FadeIn>
-            <div className="bg-surface-2 border border-border p-8 max-w-2xl">
-              <h3 className="font-display font-bold text-cream text-xl uppercase tracking-wide mb-4">
-                Platí pro všechny kategorie
-              </h3>
-              <p className="text-muted text-sm leading-relaxed">
-                Studijní materiály jsou dostupné pro studenty všech vyučovaných kategorií —
-                AM, A1, A2, A, B, B+E, C, C+E i T. Obsah je pravidelně aktualizován
-                tak, aby odpovídal aktuálním zkušebním otázkám.
-              </p>
-            </div>
-          </FadeIn>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <FadeIn>
+              <div className="bg-graphite border border-border p-8">
+                <h3 className="font-display font-bold text-cream text-xl uppercase tracking-wide mb-4">
+                  Platí pro všechny kategorie
+                </h3>
+                <p className="text-muted text-sm leading-relaxed">
+                  Studijní materiály jsou dostupné pro studenty všech vyučovaných kategorií —
+                  AM, A1, A2, A, B, B+E, C, C+E i T. Obsah je pravidelně aktualizován
+                  tak, aby odpovídal aktuálním zkušebním otázkám.
+                </p>
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={0.1}>
+              <div className="bg-graphite border border-border p-8">
+                <h3 className="font-display font-bold text-cream text-xl uppercase tracking-wide mb-6">
+                  Studovna pro žáky
+                </h3>
+                <div className="space-y-4 text-sm text-muted leading-relaxed">
+                  <p>
+                    Přihlašovací údaje obdržíte e-mailem uvedeným v žádosti o přijetí k výuce a výcviku.
+                  </p>
+                  <p>
+                    Přihlašování žáků autoškol a plánování jízd zajišťuje{" "}
+                    <a
+                      href="https://www.mojeautoskola.cz"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-cream font-medium hover:text-red transition-colors underline underline-offset-4"
+                    >
+                      MOJE AUTOŠKOLA
+                    </a>{" "}
+                    — software pro autoškoly.
+                  </p>
+                  <a
+                    href="https://www.mojeautoskola.cz"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 font-display font-bold text-red text-sm tracking-widest uppercase hover:underline mt-2"
+                  >
+                    MOJE AUTOŠKOLA →
+                  </a>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
         </div>
       </section>
     </>
