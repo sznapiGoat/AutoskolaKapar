@@ -7,14 +7,12 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-8 bg-red flex items-center justify-center">
-                <span className="font-display font-bold text-sm text-white tracking-wider">AK</span>
-              </div>
-              <span className="font-display font-bold text-dark-text text-sm tracking-widest uppercase">
-                Autoškola Kápar
+            <Link href="/" className="block mb-5">
+              <span className="font-display font-black text-dark-text text-2xl uppercase leading-none tracking-wide">
+                Autoškola<br />
+                <span className="text-red">Kápar</span>
               </span>
-            </div>
+            </Link>
             <p className="text-dark-muted text-sm leading-relaxed max-w-xs">
               {site.slogan} — srozumitelná výuka, klidné vedení a transparentní přístup k výcviku řidičů.
             </p>

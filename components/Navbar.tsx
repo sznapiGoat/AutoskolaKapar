@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
@@ -27,22 +28,24 @@ export function Navbar() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "bg-graphite/95 backdrop-blur-md border-b border-border"
+            ? "bg-graphite/97 backdrop-blur-md border-b border-border"
             : "bg-transparent"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-8 h-8 bg-red flex items-center justify-center">
-              <span className="font-display font-bold text-sm text-white tracking-wider">AK</span>
-            </div>
-            <div className="hidden sm:block">
-              <span className="font-display font-bold text-cream text-sm tracking-widest uppercase">
-                Autoškola Kápar
-              </span>
-            </div>
+          {/* Logo */}
+          <Link href="/" className="flex items-center group" aria-label="Autoškola Kapar — domů">
+            <Image
+              src="/images/kapar5.png"
+              alt="Autoškola Kapar"
+              width={120}
+              height={120}
+              className="h-11 w-auto transition-opacity duration-200 group-hover:opacity-80"
+              priority
+            />
           </Link>
 
+          {/* Desktop nav */}
           <nav className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => {
               const active =
@@ -63,6 +66,7 @@ export function Navbar() {
             })}
           </nav>
 
+          {/* Right actions */}
           <div className="flex items-center gap-3">
             <a
               href={`tel:${site.phoneRaw}`}
@@ -88,6 +92,7 @@ export function Navbar() {
         </div>
       </header>
 
+      {/* Mobile menu */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -97,7 +102,18 @@ export function Navbar() {
             transition={{ duration: 0.2 }}
             className="fixed inset-0 z-40 bg-graphite/98 backdrop-blur-xl flex flex-col pt-16"
           >
-            <nav className="flex flex-col px-6 py-8 gap-2">
+            {/* Mobile logo */}
+            <div className="px-6 pt-6 pb-2">
+              <Image
+                src="/images/kapar5.png"
+                alt="Autoškola Kapar"
+                width={100}
+                height={100}
+                className="h-14 w-auto"
+              />
+            </div>
+
+            <nav className="flex flex-col px-6 py-6 gap-1">
               {navLinks.map((link, i) => (
                 <motion.div
                   key={link.href}
@@ -118,14 +134,22 @@ export function Navbar() {
                 </motion.div>
               ))}
             </nav>
-            <div className="px-6 py-4 border-t border-border mt-auto">
+
+            <div className="px-6 py-6 border-t border-border mt-auto">
               <a
                 href={`tel:${site.phoneRaw}`}
-                className="font-display font-bold text-2xl text-cream tracking-wide"
+                className="font-display font-bold text-2xl text-cream tracking-wide hover:text-red transition-colors"
               >
                 {site.phone}
               </a>
               <p className="text-muted text-sm mt-1">{site.contactPerson}</p>
+              <Link
+                href="/online-prihlaska"
+                className="inline-flex items-center gap-2 mt-4 bg-red hover:bg-red-dark text-white font-display font-bold text-sm tracking-widest uppercase px-6 py-3 transition-colors"
+              >
+                <UserPlus size={15} />
+                Přihlásit se
+              </Link>
             </div>
           </motion.div>
         )}

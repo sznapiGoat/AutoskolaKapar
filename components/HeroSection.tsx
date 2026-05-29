@@ -19,7 +19,7 @@ export function HeroSection() {
         }}
       />
 
-      {/* Red accent line */}
+      {/* Red accent line top */}
       <motion.div
         initial={{ scaleX: 0 }}
         animate={{ scaleX: 1 }}
@@ -28,7 +28,7 @@ export function HeroSection() {
       />
 
       {/* ── LEFT panel: content ── */}
-      <div className="relative z-10 flex flex-col justify-end px-6 lg:px-12 pb-16 pt-28 lg:w-[58%]">
+      <div className="relative z-10 flex flex-col justify-end px-6 lg:px-12 pb-16 pt-28 lg:w-[56%]">
         {/* BEZPEČNĚ watermark */}
         <div className="absolute inset-0 flex items-center overflow-hidden pointer-events-none">
           <span
@@ -98,7 +98,7 @@ export function HeroSection() {
           </Link>
         </motion.div>
 
-        {/* Mobile-only info card */}
+        {/* Mobile-only info */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -107,20 +107,12 @@ export function HeroSection() {
         >
           <div>
             <p className="text-muted text-xs tracking-widest uppercase font-display font-bold mb-1">Nejbližší kurz</p>
-            <p className="font-display font-bold text-cream text-2xl">{site.nextCourse}</p>
+            <p className="font-display font-black text-red text-3xl leading-none">{site.nextCourse}</p>
           </div>
           <div className="w-full h-px bg-border" />
-          <div>
-            <p className="text-muted text-xs tracking-widest uppercase font-display font-bold mb-1">Kontakt</p>
-            <a href={`tel:${site.phoneRaw}`} className="font-display font-bold text-cream text-lg hover:text-red transition-colors block">
-              {site.phone}
-            </a>
-            <p className="text-muted text-xs mt-0.5">{site.contactPerson}</p>
-          </div>
-          <div className="flex items-start gap-2">
-            <MapPin size={13} className="text-red mt-0.5 shrink-0" />
-            <p className="text-muted text-xs leading-relaxed">{site.address}</p>
-          </div>
+          <a href={`tel:${site.phoneRaw}`} className="font-display font-bold text-cream text-lg hover:text-red transition-colors block">
+            {site.phone}
+          </a>
         </motion.div>
 
         {/* Slogan strip */}
@@ -139,55 +131,60 @@ export function HeroSection() {
         </motion.div>
       </div>
 
-      {/* ── RIGHT panel: image ── */}
-      <div className="hidden lg:block relative flex-1">
-        <Image
-          src="/images/kapar1.jpeg"
-          alt="Výuka jízdy s instruktorem autoškoly Lukáš Kápar"
-          fill
-          className="object-cover object-center"
-          priority
-          sizes="42vw"
-        />
-        {/* Left-edge gradient to blend with content */}
-        <div className="absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-graphite to-transparent pointer-events-none z-10" />
-        {/* Bottom gradient */}
-        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-graphite/20 to-transparent pointer-events-none z-10" />
+      {/* ── RIGHT panel: image + strong info strip ── */}
+      <div className="hidden lg:flex flex-col flex-1 relative">
 
-        {/* Info card overlaid on image */}
+        {/* Image — fills remaining height */}
+        <div className="relative flex-1 overflow-hidden">
+          <Image
+            src="/images/kapar1.jpeg"
+            alt="Výuka jízdy s instruktorem autoškoly Lukáš Kápar"
+            fill
+            className="object-cover"
+            style={{ objectPosition: "60% 25%" }}
+            priority
+            sizes="44vw"
+          />
+          {/* Left-edge blend into content panel */}
+          <div className="absolute inset-y-0 left-0 w-36 bg-gradient-to-r from-graphite to-transparent pointer-events-none z-10" />
+        </div>
+
+        {/* Strong info strip */}
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.9 }}
-          className="absolute bottom-16 right-8 z-20 bg-graphite/92 backdrop-blur-sm border border-border p-6 space-y-4 w-72"
+          transition={{ duration: 0.7, delay: 0.85 }}
+          className="relative z-20 bg-dark px-10 py-8"
         >
-          <div>
-            <p className="text-muted text-xs tracking-widest uppercase font-display font-bold mb-1">
-              Nejbližší kurz
-            </p>
-            <p className="font-display font-bold text-cream text-2xl">{site.nextCourse}</p>
-          </div>
-          <div className="w-full h-px bg-border" />
-          <div>
-            <p className="text-muted text-xs tracking-widest uppercase font-display font-bold mb-1">
-              Kontakt
-            </p>
-            <a
-              href={`tel:${site.phoneRaw}`}
-              className="font-display font-bold text-cream text-lg hover:text-red transition-colors block"
+          <p className="font-display font-bold text-dark-muted text-xs tracking-widest uppercase mb-2">
+            Nejbližší zahájení kurzu
+          </p>
+          <p className="font-display font-black text-red leading-none mb-5" style={{ fontSize: "clamp(36px, 4vw, 56px)" }}>
+            {site.nextCourse}
+          </p>
+          <div className="flex items-center justify-between gap-6">
+            <div>
+              <a
+                href={`tel:${site.phoneRaw}`}
+                className="font-display font-bold text-dark-text text-xl hover:text-red transition-colors block leading-none"
+              >
+                {site.phone}
+              </a>
+              <div className="flex items-center gap-1.5 mt-1.5">
+                <MapPin size={11} className="text-dark-muted" />
+                <p className="text-dark-muted text-xs">{site.addressNote}</p>
+              </div>
+            </div>
+            <Link
+              href="/online-prihlaska"
+              className="shrink-0 inline-flex items-center gap-2 bg-red hover:bg-red-dark text-white font-display font-bold text-sm tracking-widest uppercase px-7 py-3.5 transition-colors duration-200 group"
             >
-              {site.phone}
-            </a>
-            <p className="text-muted text-xs mt-0.5">{site.contactPerson}</p>
-          </div>
-          <div className="w-full h-px bg-border" />
-          <div className="flex items-start gap-2">
-            <MapPin size={13} className="text-red mt-0.5 shrink-0" />
-            <p className="text-muted text-xs leading-relaxed">
-              {site.address}<br />{site.addressNote}
-            </p>
+              Přihlásit se
+              <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
           </div>
         </motion.div>
+
       </div>
     </section>
   )
