@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { FadeIn, FadeInStagger } from "@/components/FadeIn"
@@ -64,6 +65,25 @@ export default function MotocyklyPage() {
         desc="Všechny motocyklové kategorie od mopedů po plný průkaz bez omezení výkonu. Každá skupina se dá začít samostatně nebo jako rozšíření stávajícího průkazu."
         breadcrumb={{ label: "Kurzy", href: "/kurzy" }}
       />
+
+      {/* Polygon photo */}
+      <div className="relative h-72 overflow-hidden">
+        <Image
+          src="/images/kapar3.jpeg"
+          alt="Motocykly autoškoly Lukáš Kápar na cvičném polygonu v Trhových Svinech"
+          fill
+          className="object-cover object-center"
+          sizes="100vw"
+          priority
+        />
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-graphite to-transparent pointer-events-none" />
+        <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-graphite/30 to-transparent pointer-events-none" />
+        <div className="absolute bottom-6 left-6 z-10">
+          <p className="text-white/80 text-xs font-display font-bold tracking-widest uppercase bg-graphite/70 backdrop-blur-sm px-3 py-1.5">
+            Cvičný polygon · Trhové Sviny
+          </p>
+        </div>
+      </div>
 
       <section className="py-20 bg-graphite">
         <div className="max-w-7xl mx-auto px-6 space-y-8">

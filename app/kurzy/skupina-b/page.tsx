@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, CheckCircle } from "lucide-react"
 import { FadeIn, FadeInStagger } from "@/components/FadeIn"
@@ -94,8 +95,22 @@ export default function SkupinaBPage() {
             </FadeIn>
           </div>
 
+          {/* Driving photo */}
+          <FadeIn delay={0.15} className="mt-10">
+            <div className="relative h-64 overflow-hidden">
+              <Image
+                src="/images/kapar4.jpg"
+                alt="Žákyně při jízdě ve výcvikovém vozidle autoškoly Lukáš Kápar"
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 1024px) 100vw, 70vw"
+              />
+              <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-graphite/20 to-transparent pointer-events-none" />
+            </div>
+          </FadeIn>
+
           {/* What's included */}
-          <FadeIn delay={0.2} className="mt-10">
+          <FadeIn delay={0.2} className="mt-6">
             <div className="bg-surface border border-border p-8">
               <h3 className="font-display font-bold text-cream text-xl uppercase tracking-wide mb-6">Co kurz zahrnuje</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">

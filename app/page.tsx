@@ -4,6 +4,7 @@ import { ArrowRight, Mail, Phone } from "lucide-react"
 import { categories, usps, site, stats } from "@/lib/data"
 import { FadeIn, FadeInStagger } from "@/components/FadeIn"
 import { Counter } from "@/components/Counter"
+import Image from "next/image"
 import { HeroSection } from "@/components/HeroSection"
 import { TestimonialsSection } from "@/components/TestimonialsSection"
 
@@ -142,24 +143,44 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Instructor */}
-      <section className="py-20 bg-surface border-t border-border">
+      {/* Instructor / About */}
+      <section className="py-20 bg-surface border-t border-border overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <FadeIn>
-            <div className="flex flex-col sm:flex-row items-start gap-10">
-              {/* Photo placeholder */}
-              <div className="w-40 h-40 bg-surface-2 border border-border flex items-center justify-center shrink-0">
-                {/* TODO: Replace with real photo of Lukáš Kápar */}
-                <span className="font-display font-black text-muted text-5xl">LK</span>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+              {/* Branded car photo */}
+              <div className="lg:col-span-4 relative aspect-[3/4] max-w-xs overflow-hidden">
+                <Image
+                  src="/images/kapar2.jpeg"
+                  alt="Výcvikové vozidlo autoškoly Lukáš Kápar — Trhové Sviny"
+                  fill
+                  className="object-cover object-center"
+                  sizes="(max-width: 1024px) 300px, 25vw"
+                />
               </div>
-              <div>
-                <p className="text-red font-display font-bold text-sm tracking-widest uppercase mb-3">Instruktor</p>
-                <h2 className="font-display font-black text-cream text-4xl uppercase mb-4">Lukáš Kápar</h2>
-                <p className="text-muted text-lg leading-relaxed max-w-xl">
+              {/* Text */}
+              <div className="lg:col-span-8">
+                <p className="text-red font-display font-bold text-sm tracking-widest uppercase mb-4">O nás</p>
+                <h2 className="font-display font-black text-cream uppercase leading-tight mb-6" style={{ fontSize: "clamp(36px, 5vw, 72px)" }}>
+                  Lukáš Kápar
+                </h2>
+                <p className="text-muted text-lg leading-relaxed max-w-xl mb-8">
                   Autoškolu provozuje Lukáš Kápar v Trhových Svinech již více než 10 let.
                   Za tu dobu prošlo výcvikem téměř 1 000 žáků. Srozumitelná výuka, klidné vedení
                   a individuální přístup ke každému žákovi jsou základem jeho přístupu.
                 </p>
+                <div className="grid grid-cols-3 gap-6 max-w-sm">
+                  {[
+                    { value: "10+", label: "let praxe" },
+                    { value: "~1000", label: "absolventů" },
+                    { value: "9", label: "kategorií" },
+                  ].map((s) => (
+                    <div key={s.label}>
+                      <p className="font-display font-black text-cream text-3xl leading-none mb-1">{s.value}</p>
+                      <p className="text-muted text-xs uppercase tracking-widest font-display font-bold">{s.label}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </FadeIn>
