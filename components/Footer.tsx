@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { navLinks, site } from "@/lib/data"
 
 export function Footer() {
@@ -7,11 +8,16 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div>
-            <Link href="/" className="block mb-5">
-              <span className="font-display font-black text-dark-text text-2xl uppercase leading-none tracking-wide">
-                Autoškola<br />
-                <span className="text-red">Kápar</span>
-              </span>
+            <Link href="/" className="inline-block mb-5 group">
+              <div className="bg-white px-5 py-3 inline-block transition-opacity duration-200 group-hover:opacity-90">
+                <Image
+                  src="/images/kapar6.webp"
+                  alt="Autoškola Lukáš Kápar"
+                  width={200}
+                  height={80}
+                  className="h-12 w-auto"
+                />
+              </div>
             </Link>
             <p className="text-dark-muted text-sm leading-relaxed max-w-xs">
               {site.slogan} — srozumitelná výuka, klidné vedení a transparentní přístup k výcviku řidičů.
