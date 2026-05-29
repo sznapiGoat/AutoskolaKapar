@@ -52,11 +52,11 @@ export function Navbar() {
               transition={{ duration: 0.15, ease: "easeOut" }}
             >
               <Image
-                src="/images/kapar6.webp"
+                src="/images/kapar7.svg"
                 alt="Autoškola Lukáš Kápar"
-                width={180}
-                height={72}
-                className="h-9 w-auto"
+                width={160}
+                height={58}
+                className="h-8 w-auto"
                 priority
               />
             </motion.div>
@@ -154,17 +154,15 @@ export function Navbar() {
             transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="fixed inset-0 z-40 bg-graphite/99 backdrop-blur-xl flex flex-col pt-16"
           >
-            {/* Logo in white box */}
+            {/* Logo in mobile menu */}
             <div className="px-6 pt-8 pb-2">
-              <div className="inline-block bg-white px-4 py-2.5">
-                <Image
-                  src="/images/kapar6.webp"
-                  alt="Autoškola Lukáš Kápar"
-                  width={160}
-                  height={64}
-                  className="h-10 w-auto"
-                />
-              </div>
+              <Image
+                src="/images/kapar7.svg"
+                alt="Autoškola Lukáš Kápar"
+                width={160}
+                height={58}
+                className="h-10 w-auto"
+              />
             </div>
 
             <nav className="flex flex-col px-6 py-6 gap-1 flex-1">

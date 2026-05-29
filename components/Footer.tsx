@@ -9,15 +9,13 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div>
             <Link href="/" className="inline-block mb-5 group">
-              <div className="bg-white px-5 py-3 inline-block transition-opacity duration-200 group-hover:opacity-90">
-                <Image
-                  src="/images/kapar6.webp"
-                  alt="Autoškola Lukáš Kápar"
-                  width={200}
-                  height={80}
-                  className="h-12 w-auto"
-                />
-              </div>
+              <Image
+                src="/images/kapar7.svg"
+                alt="Autoškola Lukáš Kápar"
+                width={160}
+                height={58}
+                className="h-11 w-auto transition-opacity duration-200 group-hover:opacity-75"
+              />
             </Link>
             <p className="text-dark-muted text-sm leading-relaxed max-w-xs">
               {site.slogan} — srozumitelná výuka, klidné vedení a transparentní přístup k výcviku řidičů.
