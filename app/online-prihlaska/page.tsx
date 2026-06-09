@@ -56,7 +56,7 @@ export default function OnlinePrihlaskaPage() {
                   </h3>
                   <ol className="space-y-3">
                     {[
-                      "Kontaktujte nás — telefonicky, e-mailem nebo formulářem",
+                      "Kontaktujte nás, telefonicky, e-mailem nebo formulářem",
                       "Domluvíme termín a typ kurzu (Flexi / Standard / Premium)",
                       "Po zaplacení zálohy obdržíte e-mailem přihlašovací údaje do MOJE AUTOŠKOLA",
                       "Přes MOJE AUTOŠKOLA sledujete průběh výcviku a plánujete jízdy",

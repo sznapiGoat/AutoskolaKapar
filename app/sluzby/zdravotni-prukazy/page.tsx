@@ -6,21 +6,21 @@ import { AlertCircle, CheckCircle, Phone } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Zdravotní průkazy",
-  description: "Informace o zdravotní způsobilosti k řízení motorových vozidel — co potřebujete před zápisem do autoškoly.",
+  description: "Informace o zdravotní způsobilosti k řízení motorových vozidel, co potřebujete před zápisem do autoškoly.",
 }
 
 const steps = [
   "Navštivte svého praktického lékaře (obvodního doktora)",
   "Požádejte o vystavení Lékařského posudku o zdravotní způsobilosti k řízení motorových vozidel",
-  "Lékař provede základní vyšetření a posudek vystaví — obvykle při stejné návštěvě",
+  "Lékař provede základní vyšetření a posudek vystaví, obvykle při stejné návštěvě",
   "Posudek přinesete při zápisu do autoškoly",
 ]
 
 const notes = [
   "Posudek je nutný pro všechny kategorie řidičského průkazu",
   "Při určitých zdravotních stavech může být vyžadováno odborné vyšetření (oční, kardiologické apod.)",
-  "Kategorie C a C+E mají přísnější zdravotní požadavky — opakované přezkoušení každé 5 let",
-  "Posudek je vydán na formuláři předepsaném vyhláškou — lékař ho má k dispozici",
+  "Kategorie C a C+E mají přísnější zdravotní požadavky, opakované přezkoušení každé 5 let",
+  "Posudek je vydán na formuláři předepsaném vyhláškou, lékař ho má k dispozici",
 ]
 
 export default function ZdravotniPrukazyPage() {

@@ -7,7 +7,7 @@ import { ContactForm } from "@/components/ContactForm"
 
 export const metadata: Metadata = {
   title: "Kontakt",
-  description: "Kontakt na autoškolu Lukáš Kápar — telefon, e-mail, adresa a kontaktní formulář.",
+  description: "Kontakt na autoškolu Lukáš Kápar, telefon, e-mail, adresa a kontaktní formulář.",
 }
 
 const contactItems = [

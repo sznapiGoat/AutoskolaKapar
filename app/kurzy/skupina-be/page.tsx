@@ -5,7 +5,7 @@ import { FadeIn, FadeInStagger } from "@/components/FadeIn"
 import { PageHeader } from "@/components/PageHeader"
 
 export const metadata: Metadata = {
-  title: "Skupina B+E — Auto s přívěsem",
+  title: "Skupina B+E: Auto s přívěsem",
   description: "Kurz řidičského průkazu B+E v Trhových Svinech. Standard 9 500 Kč, zrychlený kurz 11 900 Kč.",
 }
 
@@ -15,7 +15,7 @@ export default function SkupinaBEPage() {
       <PageHeader
         label="Skupina B+E"
         title="Auto s přívěsem"
-        desc="Vozidlo skupiny B s přípojným vozidlem, jehož celková hmotnost přesahuje 750 kg — celkem do 7 000 kg."
+        desc="Vozidlo skupiny B s přípojným vozidlem, jehož celková hmotnost přesahuje 750 kg, celkem do 7 000 kg."
         breadcrumb={{ label: "Kurzy", href: "/kurzy" }}
       />
 

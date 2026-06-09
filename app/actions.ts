@@ -18,7 +18,7 @@ export async function submitContact(prev: FormState, formData: FormData): Promis
     return { success: false, error: "Zadejte platnou e-mailovou adresu." }
   }
 
-  // TODO: add email provider — e.g. Resend (https://resend.com):
+  // TODO: add email provider, e.g. Resend (https://resend.com):
   // import { Resend } from "resend"
   // const resend = new Resend(process.env.RESEND_API_KEY)
   // await resend.emails.send({

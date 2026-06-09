@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s | Autoškola Lukáš Kápar",
   },
   description:
-    "Autoškola v Trhových Svinech — výcvik kategorií AM, A1, A2, A, B, B+E, C, C+E, T. Srozumitelná výuka, transparentní ceny, individuální přístup.",
+    "Autoškola v Trhových Svinech, výcvik kategorií AM, A1, A2, A, B, B+E, C, C+E, T. Srozumitelná výuka, transparentní ceny, individuální přístup.",
   keywords: ["autoškola", "Trhové Sviny", "řidičský průkaz", "výcvik", "motocykl", "kategorie B"],
 }
 
@@ -32,7 +32,7 @@ const structuredData = {
   "@type": ["LocalBusiness", "EducationalOrganization"],
   name: "Autoškola Lukáš Kápar",
   description:
-    "Autoškola v Trhových Svinech — výcvik kategorií AM, A1, A2, A, B, B+E, C, C+E, T. Srozumitelná výuka, transparentní ceny, individuální přístup.",
+    "Autoškola v Trhových Svinech, výcvik kategorií AM, A1, A2, A, B, B+E, C, C+E, T. Srozumitelná výuka, transparentní ceny, individuální přístup.",
   slogan: "Bezpečně s námi",
   telephone: "+420721574907",
   email: "info@autoskolakapar.cz",

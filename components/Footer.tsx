@@ -18,7 +18,7 @@ export function Footer() {
               />
             </Link>
             <p className="text-dark-muted text-sm leading-relaxed max-w-xs">
-              {site.slogan} — srozumitelná výuka, klidné vedení a transparentní přístup k výcviku řidičů.
+              {site.slogan}, srozumitelná výuka, klidné vedení a transparentní přístup k výcviku řidičů.
             </p>
           </div>
 

@@ -66,7 +66,7 @@ export const categories = [
     code: "B",
     name: "Osobní auto",
     age: "17+",
-    desc: "Osobní vozidla do 3 500 kg — nejoblíbenější kategorie",
+    desc: "Osobní vozidla do 3 500 kg, nejoblíbenější kategorie",
   },
   {
     code: "B+E",
@@ -256,10 +256,10 @@ export const l17 = {
 export const studyMaterials = [
   {
     title: "Učebnice Autoškola? Pohodlně!",
-    desc: "Každý student obdrží výpůjčku aktuálního vydání učebnice a přístup k online verzi. Aktualizována 2× ročně — unikát mezi českými autoškolami.",
+    desc: "Každý student obdrží výpůjčku aktuálního vydání učebnice a přístup k online verzi. Aktualizována 2× ročně, unikát mezi českými autoškolami.",
   },
   {
-    title: "Online testování — autoskola-testy.cz",
+    title: "Online testování na autoskola-testy.cz",
     desc: "Bezplatný přístup k testovacímu portálu s podrobným vyhodnocením, statistikami úspěšnosti a přehledně seřazenými okruhy otázek.",
   },
   {

@@ -5,7 +5,7 @@ import { PageHeader } from "@/components/PageHeader"
 
 export const metadata: Metadata = {
   title: "Ceník",
-  description: "Přehled cen kurzů — motocykly, automobily, zvýhodněné balíčky, kondiční jízdy a věrnostní slevy.",
+  description: "Přehled cen kurzů, motocykly, automobily, zvýhodněné balíčky, kondiční jízdy a věrnostní slevy.",
 }
 
 function fmt(n: number) {
@@ -27,7 +27,7 @@ export default function CenikPage() {
       <PageHeader
         label="Ceník"
         title="Transparentní ceny bez překvapení"
-        desc={`Platnost ceníku od ${site.pricingValidFrom}. Ceny jsou uvedeny bez DPH — provozovatel není plátce DPH.`}
+        desc={`Platnost ceníku od ${site.pricingValidFrom}. Ceny jsou uvedeny bez DPH, provozovatel není plátce DPH.`}
       />
 
       {/* Package explanation */}
@@ -35,7 +35,7 @@ export default function CenikPage() {
         <div className="max-w-7xl mx-auto px-6">
           <FadeInStagger className="grid grid-cols-1 sm:grid-cols-3 gap-4" staggerDelay={0.08}>
             {[
-              { name: "Flexi", desc: "Flexibilní termíny — docházejte, kdy vám to vyhovuje. Ideální pro zaneprázdněné studenty a pracující." },
+              { name: "Flexi", desc: "Flexibilní termíny, docházejte, kdy vám to vyhovuje. Ideální pro zaneprázdněné studenty a pracující." },
               { name: "Standard", desc: "Standardní průběh kurzu v pevně daných skupinových termínech. Nejoblíbenější volba." },
               { name: "Premium", desc: "Prioritní obsluha, více individuálních jízd a prémiový přístup po celou dobu kurzu." },
             ].map((pkg) => (

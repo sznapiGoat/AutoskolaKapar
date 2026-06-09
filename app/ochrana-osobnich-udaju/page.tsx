@@ -5,7 +5,7 @@ import { site } from "@/lib/data"
 
 export const metadata: Metadata = {
   title: "Ochrana osobních údajů",
-  description: "Zásady ochrany osobních údajů autoškoly Lukáš Kápar — GDPR, zpracování dat, práva subjektů.",
+  description: "Zásady ochrany osobních údajů autoškoly Lukáš Kápar, GDPR, zpracování dat, práva subjektů.",
 }
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
@@ -43,10 +43,10 @@ export default function OchranaPage() {
                 <p>V rámci provozu webových stránek a poskytování služeb zpracováváme následující osobní údaje:</p>
                 <ul className="space-y-2 mt-2">
                   {[
-                    "Jméno a příjmení — při zápisu do kurzu a prostřednictvím kontaktního formuláře",
-                    "E-mailová adresa — pro komunikaci a zasílání informací o kurzu",
-                    "Telefonní číslo — pro přímou komunikaci (je-li poskytnuto)",
-                    "Zpráva / dotaz — obsah komunikace přes kontaktní formulář",
+                    "Jméno a příjmení, při zápisu do kurzu a prostřednictvím kontaktního formuláře",
+                    "E-mailová adresa, pro komunikaci a zasílání informací o kurzu",
+                    "Telefonní číslo, pro přímou komunikaci (je-li poskytnuto)",
+                    "Zpráva / dotaz, obsah komunikace přes kontaktní formulář",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3">
                       <span className="w-1.5 h-1.5 bg-red rounded-full mt-2 shrink-0" />
@@ -60,9 +60,9 @@ export default function OchranaPage() {
                 <p>Osobní údaje zpracováváme pro tyto účely:</p>
                 <ul className="space-y-2 mt-2">
                   {[
-                    "Plnění smlouvy o výcviku — zpracování je nezbytné pro vedení kurzu (čl. 6 odst. 1 písm. b) GDPR)",
-                    "Odpovídání na dotazy — oprávněný zájem správce na komunikaci s potenciálními žáky (čl. 6 odst. 1 písm. f) GDPR)",
-                    "Plnění zákonných povinností — vedení záznamu o výcviku dle zákona č. 247/2000 Sb.",
+                    "Plnění smlouvy o výcviku, zpracování je nezbytné pro vedení kurzu (čl. 6 odst. 1 písm. b) GDPR)",
+                    "Odpovídání na dotazy, oprávněný zájem správce na komunikaci s potenciálními žáky (čl. 6 odst. 1 písm. f) GDPR)",
+                    "Plnění zákonných povinností, vedení záznamu o výcviku dle zákona č. 247/2000 Sb.",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3">
                       <span className="w-1.5 h-1.5 bg-red rounded-full mt-2 shrink-0" />
@@ -76,8 +76,8 @@ export default function OchranaPage() {
                 <p>Osobní údaje uchováváme po dobu nezbytnou pro splnění účelu zpracování:</p>
                 <ul className="space-y-2 mt-2">
                   {[
-                    "Údaje žáků z výcviku — po dobu 10 let od ukončení kurzu (zákonná povinnost)",
-                    "Dotazy přes kontaktní formulář — po dobu 1 roku od přijetí dotazu",
+                    "Údaje žáků z výcviku, po dobu 10 let od ukončení kurzu (zákonná povinnost)",
+                    "Dotazy přes kontaktní formulář, po dobu 1 roku od přijetí dotazu",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3">
                       <span className="w-1.5 h-1.5 bg-red rounded-full mt-2 shrink-0" />
@@ -93,7 +93,7 @@ export default function OchranaPage() {
                   {[
                     "Právo na přístup k osobním údajům",
                     "Právo na opravu nepřesných údajů",
-                    "Právo na výmaz údajů (\"právo být zapomenut\") — pokud není zpracování vyžadováno zákonem",
+                    "Právo na výmaz údajů (\"právo být zapomenut\"), pokud není zpracování vyžadováno zákonem",
                     "Právo na omezení zpracování",
                     "Právo vznést námitku proti zpracování",
                     "Právo podat stížnost u Úřadu pro ochranu osobních údajů (www.uoou.cz)",

@@ -6,7 +6,7 @@ import { FadeIn, FadeInStagger } from "@/components/FadeIn"
 import { PageHeader } from "@/components/PageHeader"
 
 export const metadata: Metadata = {
-  title: "Skupina B — Osobní automobil",
+  title: "Skupina B: Osobní automobil",
   description: "Kurz řidičského průkazu skupiny B v Trhových Svinech. Flexi od 20 900 Kč, Standard od 22 900 Kč, Premium od 24 900 Kč.",
 }
 
@@ -14,12 +14,12 @@ const packages = [
   {
     name: "Flexi",
     price: 20900,
-    desc: "Flexibilní termíny — docházejte, kdy vám to vyhovuje.",
+    desc: "Flexibilní termíny, docházejte, kdy vám to vyhovuje.",
   },
   {
     name: "Standard",
     price: 22900,
-    desc: "Pevné skupinové termíny — nejoblíbenější volba.",
+    desc: "Pevné skupinové termíny, nejoblíbenější volba.",
   },
   {
     name: "Premium",

@@ -11,11 +11,11 @@ import { TestimonialsSection } from "@/components/TestimonialsSection"
 export const metadata: Metadata = {
   title: "Autoškola Lukáš Kápar | Bezpečně s námi",
   description:
-    "Autoškola v Trhových Svinech — výcvik kategorií AM, A1, A2, A, B, B+E, C, C+E, T. Srozumitelná výuka, transparentní ceny, individuální přístup.",
+    "Autoškola v Trhových Svinech, výcvik kategorií AM, A1, A2, A, B, B+E, C, C+E, T. Srozumitelná výuka, transparentní ceny, individuální přístup.",
 }
 
 const services = [
-  { label: "Kurzy", href: "/kurzy", desc: "B, motocykly, B+E, C, T — vyberte si kategorii" },
+  { label: "Kurzy", href: "/kurzy", desc: "B, motocykly, B+E, C, T, vyberte si kategorii" },
   { label: "Ceník", href: "/cenik", desc: "Flexi, Standard, Premium a zvýhodněné balíčky" },
   { label: "Termíny", href: "/terminy", desc: "Nejbližší kurz: " + site.nextCourse },
   { label: "Služby", href: "/sluzby", desc: "Kondiční jízdy, L17, vrácení řidičáku" },
@@ -148,11 +148,11 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6">
           <FadeIn>
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-              {/* Branded car photo */}
+              {/* Training photo */}
               <div className="lg:col-span-4 relative aspect-[3/4] max-w-xs overflow-hidden">
                 <Image
-                  src="/images/kapar2.jpeg"
-                  alt="Výcvikové vozidlo autoškoly Lukáš Kápar — Trhové Sviny"
+                  src="/images/kapar4.jpg"
+                  alt="Výcvik jízdy v autoškole Lukáš Kápar, Trhové Sviny"
                   fill
                   className="object-cover object-center"
                   sizes="(max-width: 1024px) 300px, 25vw"
@@ -208,7 +208,7 @@ export default function HomePage() {
               <Link
                 key={s.href}
                 href={s.href}
-                className="group bg-surface-2 hover:bg-graphite border border-border hover:border-red/40 p-8 transition-all duration-300 flex flex-col gap-4"
+                className="group bg-surface-2 hover:bg-graphite border border-border hover:border-red/40 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/5 p-8 transition-all duration-300 flex flex-col gap-4"
               >
                 <div className="flex items-center justify-between">
                   <h3 className="font-display font-bold text-xl text-cream uppercase tracking-wide group-hover:text-red transition-colors duration-300">

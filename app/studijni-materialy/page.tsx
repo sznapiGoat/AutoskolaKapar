@@ -6,7 +6,7 @@ import { BookOpen, Monitor, Smartphone } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Studijní materiály",
-  description: "Bezplatné studijní materiály pro studenty autoškoly — učebnice, online testy a mobilní aplikace.",
+  description: "Bezplatné studijní materiály pro studenty autoškoly, učebnice, online testy a mobilní aplikace.",
 }
 
 const icons = [BookOpen, Monitor, Smartphone]
@@ -50,7 +50,7 @@ export default function StudijniMaterialyPage() {
                   Platí pro všechny kategorie
                 </h3>
                 <p className="text-muted text-sm leading-relaxed">
-                  Studijní materiály jsou dostupné pro studenty všech vyučovaných kategorií —
+                  Studijní materiály jsou dostupné pro studenty všech vyučovaných kategorií,
                   AM, A1, A2, A, B, B+E, C, C+E i T. Obsah je pravidelně aktualizován
                   tak, aby odpovídal aktuálním zkušebním otázkám.
                 </p>
@@ -76,7 +76,7 @@ export default function StudijniMaterialyPage() {
                     >
                       MOJE AUTOŠKOLA
                     </a>{" "}
-                    — software pro autoškoly.
+                   , software pro autoškoly.
                   </p>
                   <a
                     href="https://www.mojeautoskola.cz"

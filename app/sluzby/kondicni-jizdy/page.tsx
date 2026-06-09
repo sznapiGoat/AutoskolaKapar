@@ -6,7 +6,7 @@ import { ContactForm } from "@/components/ContactForm"
 
 export const metadata: Metadata = {
   title: "Kondiční jízdy",
-  description: "Kondiční jízdy skupin A2, A, B a B+E — oživení a zdokonalení řidičských dovedností s instruktorem.",
+  description: "Kondiční jízdy skupin A2, A, B a B+E, oživení a zdokonalení řidičských dovedností s instruktorem.",
 }
 
 function fmt(n: number) {

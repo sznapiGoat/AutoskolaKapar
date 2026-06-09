@@ -5,7 +5,7 @@ import { FadeIn } from "@/components/FadeIn"
 import { PageHeader } from "@/components/PageHeader"
 
 export const metadata: Metadata = {
-  title: "Skupina T — Traktor",
+  title: "Skupina T: Traktor",
   description: "Kurz řidičského průkazu skupiny T v Trhových Svinech. Standard 16 900 Kč, rozšíření ze skupiny B 12 900 Kč.",
 }
 

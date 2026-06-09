@@ -6,14 +6,14 @@ import { PageHeader } from "@/components/PageHeader"
 
 export const metadata: Metadata = {
   title: "Služby",
-  description: "Doplňkové služby autoškoly Lukáš Kápar — kondiční jízdy, program L17, vrácení řidičáku.",
+  description: "Doplňkové služby autoškoly Lukáš Kápar, kondiční jízdy, program L17, vrácení řidičáku.",
 }
 
 const services = [
   {
     label: "Kondiční jízdy",
     href: "/sluzby/kondicni-jizdy",
-    desc: "Skupiny A2, A, B a B+E. Oživení nebo vylepšení řidičských dovedností — parkování, dálnice, město, automatická převodovka.",
+    desc: "Skupiny A2, A, B a B+E. Oživení nebo vylepšení řidičských dovedností, parkování, dálnice, město, automatická převodovka.",
     from: "od 600 Kč / 60 min",
   },
   {
@@ -31,7 +31,7 @@ const services = [
   {
     label: "Zdravotní průkazy",
     href: "/sluzby/zdravotni-prukazy",
-    desc: "Informace o lékařském posudku zdravotní způsobilosti — co potřebujete před zápisem do kurzu.",
+    desc: "Informace o lékařském posudku zdravotní způsobilosti, co potřebujete před zápisem do kurzu.",
     from: null,
   },
 ]

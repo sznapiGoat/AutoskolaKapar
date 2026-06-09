@@ -5,7 +5,7 @@ import { FadeIn, FadeInStagger } from "@/components/FadeIn"
 import { PageHeader } from "@/components/PageHeader"
 
 export const metadata: Metadata = {
-  title: "Skupina C / C+E — Nákladní vozidla",
+  title: "Skupina C / C+E: Nákladní vozidla",
   description: "Kurz řidičského průkazu C a C+E v Trhových Svinech. Skupina C od 36 000 Kč, rozšíření C+E od 28 000 Kč.",
 }
 

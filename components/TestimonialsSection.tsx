@@ -14,7 +14,7 @@ const testimonials = [
     source: "Google",
   },
   {
-    text: "Individuální přístup — přizpůsobili se mému tempu. Nevyvíjeli tlak na zbytečné jízdy navíc.",
+    text: "Individuální přístup, přizpůsobili se mému tempu. Nevyvíjeli tlak na zbytečné jízdy navíc.",
     name: "Petra S.",
     source: "Google",
   },

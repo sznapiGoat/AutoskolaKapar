@@ -5,7 +5,7 @@ import { site } from "@/lib/data"
 
 export const metadata: Metadata = {
   title: "Podmínky",
-  description: "Obchodní podmínky autoškoly Lukáš Kápar — přihlášení, platby, zrušení kurzu.",
+  description: "Obchodní podmínky autoškoly Lukáš Kápar, přihlášení, platby, zrušení kurzu.",
 }
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
@@ -37,7 +37,7 @@ export default function PodminkyPage() {
               </Section>
 
               <Section title="2. Platební podmínky">
-                <p>Cena kurzu je splatná dle dohody při zápisu. Autoškola není plátce DPH — ceny jsou konečné.</p>
+                <p>Cena kurzu je splatná dle dohody při zápisu. Autoškola není plátce DPH, ceny jsou konečné.</p>
                 <p>Platbu lze provést hotovostí v sídle autoškoly nebo převodem na účet č. {site.bankAccount}.</p>
                 <p>V případě platby převodem je za datum úhrady považováno datum připsání platby na účet.</p>
               </Section>

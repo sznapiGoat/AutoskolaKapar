@@ -6,7 +6,7 @@ import { ShieldCheck, Users, AlertCircle } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Program L17",
-  description: "Program L17 — doprovázené řízení od 17 let pod dohledem zkušeného mentora.",
+  description: "Program L17: doprovázené řízení od 17 let pod dohledem zkušeného mentora.",
 }
 
 export default function L17Page() {
@@ -71,7 +71,7 @@ export default function L17Page() {
               <div>
                 <h3 className="font-display font-bold text-cream text-lg uppercase tracking-wide mb-2">Odpovědnost mentora</h3>
                 <p className="text-muted text-sm leading-relaxed">
-                  Mentor nesedí jako pasivní spolujezdec — aktivně dohlíží na jízdu a radí. Nese spoluodpovědnost za případné nehody způsobené nedostatečnou pozorností.
+                  Mentor nesedí jako pasivní spolujezdec, aktivně dohlíží na jízdu a radí. Nese spoluodpovědnost za případné nehody způsobené nedostatečnou pozorností.
                 </p>
               </div>
             </div>

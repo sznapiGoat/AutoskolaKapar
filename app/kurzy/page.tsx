@@ -6,7 +6,7 @@ import { PageHeader } from "@/components/PageHeader"
 
 export const metadata: Metadata = {
   title: "Kurzy",
-  description: "Přehled kurzů řidičského průkazu — skupina B, motocykly AM/A1/A2/A, B+E, C, C+E, T.",
+  description: "Přehled kurzů řidičského průkazu, skupina B, motocykly AM/A1/A2/A, B+E, C, C+E, T.",
 }
 
 const courses = [
@@ -87,7 +87,7 @@ export default function KurzyPage() {
                         Nejoblíbenější · věk {b.age}
                       </p>
                       <h2 className="font-display font-black text-white text-4xl uppercase leading-tight mb-3">
-                        Skupina {b.code} — {b.name}
+                        Skupina {b.code}: {b.name}
                       </h2>
                       <p className="text-white/80 text-sm leading-relaxed max-w-lg">{b.desc}</p>
                       <p className="text-white font-display font-bold text-xl mt-4">od {b.from}</p>
@@ -130,7 +130,7 @@ export default function KurzyPage() {
           <FadeIn delay={0.3} className="mt-8">
             <div className="bg-surface border border-border p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <p className="text-muted text-sm leading-relaxed max-w-xl">
-                Zvýhodněné balíčky při kombinaci více kurzů — např. A2+B nebo B+T. Věrnostní slevy pro opakované zákazníky.
+                Zvýhodněné balíčky při kombinaci více kurzů, např. A2+B nebo B+T. Věrnostní slevy pro opakované zákazníky.
               </p>
               <Link
                 href="/cenik"

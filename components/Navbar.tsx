@@ -5,13 +5,15 @@ import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X, UserPlus } from "lucide-react"
+import { Menu, X, UserPlus, Phone } from "lucide-react"
 import { navLinks, site } from "@/lib/data"
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
   const pathname = usePathname()
+  // Transparent navbar sits over the dark full-bleed hero only on the homepage top
+  const onDark = pathname === "/" && !scrolled
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -45,7 +47,7 @@ export function Navbar() {
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
 
           {/* Logo */}
-          <Link href="/" onClick={handleLogoClick} aria-label="Autoškola Lukáš Kápar — zpět na začátek">
+          <Link href="/" onClick={handleLogoClick} aria-label="Autoškola Lukáš Kápar, zpět na začátek">
             <motion.div
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.96 }}
@@ -74,7 +76,11 @@ export function Navbar() {
                   key={link.href}
                   href={link.href}
                   className={`relative px-3 py-2 text-sm font-medium tracking-wide transition-colors duration-200 ${
-                    active ? "text-red" : "text-muted hover:text-cream"
+                    active
+                      ? "text-red"
+                      : onDark
+                        ? "text-white/80 hover:text-white"
+                        : "text-muted hover:text-cream"
                   }`}
                 >
                   {link.label}
@@ -94,10 +100,13 @@ export function Navbar() {
           <div className="flex items-center gap-3">
             <motion.a
               href={`tel:${site.phoneRaw}`}
-              className="hidden xl:block text-sm font-medium text-muted hover:text-cream transition-colors duration-200"
+              className={`hidden xl:inline-flex items-center gap-1.5 text-sm font-semibold hover:text-red transition-colors duration-200 ${
+                onDark ? "text-white/90" : "text-cream/90"
+              }`}
               whileHover={{ x: 1 }}
               transition={{ duration: 0.15 }}
             >
+              <Phone size={14} className="text-red" />
               {site.phone}
             </motion.a>
 
@@ -113,7 +122,9 @@ export function Navbar() {
 
             <button
               onClick={() => setOpen(!open)}
-              className="lg:hidden w-9 h-9 flex items-center justify-center text-cream hover:text-red transition-colors"
+              className={`lg:hidden w-9 h-9 flex items-center justify-center hover:text-red transition-colors ${
+              onDark ? "text-white" : "text-cream"
+            }`}
               aria-label={open ? "Zavřít menu" : "Otevřít menu"}
             >
               <AnimatePresence mode="wait" initial={false}>

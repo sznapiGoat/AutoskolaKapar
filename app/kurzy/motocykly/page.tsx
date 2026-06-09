@@ -6,8 +6,8 @@ import { FadeIn, FadeInStagger } from "@/components/FadeIn"
 import { PageHeader } from "@/components/PageHeader"
 
 export const metadata: Metadata = {
-  title: "Motocykly — AM, A1, A2, A",
-  description: "Motocyklové kurzy v Trhových Svinech — skupiny AM, A1, A2 a A. Ceny od 12 900 Kč, rozšíření ze stávajícího průkazu.",
+  title: "Motocykly: AM, A1, A2, A",
+  description: "Motocyklové kurzy v Trhových Svinech, skupiny AM, A1, A2 a A. Ceny od 12 900 Kč, rozšíření ze stávajícího průkazu.",
 }
 
 function fmt(n: number) {
